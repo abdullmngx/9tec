@@ -430,8 +430,8 @@
             <div class="input-group mb-2 mb-sm-0">
               <input type="text" class="form-control" name="copy" id="invite_url" placeholder="Invite url" value="https://{{ request()->getHost() }}/user/register/{{ auth()->user()->encrypted_id }}">
 
-              <div class="input-group-append input-group-append-last-sm-down-none">
-                <a class="btn btn-primary d-none d-sm-inline-block copy" href="javascript:;">copy</a>
+              <div class="input-group-append">
+                <a class="btn btn-primary d-sm-inline-block copy" href="javascript:;">copy</a>
               </div>
             </div>
             <div class="copy-msg"></div>
