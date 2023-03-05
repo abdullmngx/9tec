@@ -27,7 +27,7 @@ class UserController extends Controller
     {
         if (!is_null($ref_id))
         {
-            return view('auth.register', ['ref_id' => Crypt::decryptString($ref_id)]);
+            return view('auth.register', ['ref_id' => base64_decode($ref_id)]);
         }
         else
         {

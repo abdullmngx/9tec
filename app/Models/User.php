@@ -63,7 +63,7 @@ class User extends Authenticatable implements MustVerifyEmail
     public function encryptedId(): Attribute
     {
         return Attribute::make(
-            get: fn ($value, $attributes) => Crypt::encryptString($attributes['id'])
+            get: fn ($value, $attributes) => base64_encode($attributes['id'])
         );
     }
 
