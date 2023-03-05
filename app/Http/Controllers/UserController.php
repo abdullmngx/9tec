@@ -25,7 +25,14 @@ class UserController extends Controller
 
     public function register($ref_id = null)
     {
-        return view('auth.register', ['ref_id' => Crypt::decryptString($ref_id)]);
+        if (!is_null($ref_id))
+        {
+            return view('auth.register', ['ref_id' => Crypt::decryptString($ref_id)]);
+        }
+        else
+        {
+            return view('auth.register', ['ref_id' => $ref_id]);
+        }
     }
 
     public function authenticate(Request $request)
